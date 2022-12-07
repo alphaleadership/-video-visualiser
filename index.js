@@ -3,13 +3,18 @@ const app = express();
 const fs = require("fs");
 const db=require("./db.js")
 const getid=(id)=>{
-  return new db.getpath(id)
+  let e=new db
+  getpath=(i)=>{return e.getpath(i)}
+  return getpath(id)
 }
 
 app.set('view engine', 'ejs');
 app.get("/", function (req, res) {
+  const d =new db 
+  let retour=[]
+  d.db.map((item)=>{retour.push(item.id)})
   res.render('index', {
-    results: fs.readdirSync("C:\\Users\\MPA\\Videos\\file")
+    results: retour
     
 });
 })

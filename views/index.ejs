@@ -19,13 +19,11 @@
   </head>
   <body>
     <ul>
-        <% results.forEach(function(result){ %>
-          <form action=watch?>>
-            <input type="submit" value=<%= result %> />
+      <% results.forEach(function(result){ %>
+        <form action="/watch?id=<%= result %>">
+          <input type="submit" value="Watch" />
         </form>
-        
-          
-        <%  }); %>
+      <% }); %>
     </ul>
   </body>
 </html>
